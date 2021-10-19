@@ -117,7 +117,7 @@ export class Target {
     if (
       (this._targetInfo.type === 'page' ||
         this._targetInfo.type === 'background_page' ||
-        this._targetInfo.type === 'webview') &&
+        this._targetInfo.type === 'webview' || this._targetInfo.type === 'iframe' || this._targetInfo.type === 'other') &&
       !this._pagePromise
     ) {
       this._pagePromise = this._sessionFactory().then((client) =>
